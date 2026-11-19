@@ -34,7 +34,10 @@ jobs:
           extended: true
 
       - name: Install Dart Sass
-        run: npm install --global sass@1.108.2
+        run: |
+          curl -sL -o /tmp/dart-sass.tar.gz https://github.com/sass/dart-sass/releases/download/1.108.2/dart-sass-1.108.2-linux-x64.tar.gz
+          sudo tar -xzf /tmp/dart-sass.tar.gz -C /opt
+          echo "/opt/dart-sass" >> "$GITHUB_PATH"
 
       - name: Install dependencies
         working-directory: exampleSites/portfolio
