@@ -6,68 +6,82 @@ section:
   weight: 3
   showOnNavbar: true
   # Can optionally hide the title in sections
-  # hideTitle: true 
+  # hideTitle: true
 
 # Your experiences
 experiences:
 - company:
-    name: Example Co.
-    url: "https://www.example.com"
-    location: Dhaka Branch
-    logo: /images/sections/experiences/company1.jpg
-    # Can optionally show a different logo for dark theme
-    # darkLogo: /images/sections/experiences/company1.jpg
-    # company overview
-    overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+    name: Reality Reload
+    location: New York, NY
   positions:
-  - designation: Senior Software Engineer
-    start: Nov 2019
-    # don't provide end date if you are currently working there. It will be replaced by "Present"
-    # end: Dec 2020
-    # give some points about what was your responsibilities at the company.
+  - designation: Community & Social Media Coordinator
+    start: Oct 2026
     responsibilities:
-    - Design and develop XYZ tool for ABC task
-    - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases, and cluster's resource definition.
-    - Lead backend team.
-
-  - designation: Junior Software Engineer
-    start: Nov 2017
-    end: Oct 2019
-    responsibilities:
-    - Implement and test xyz feature for abc tool.
-    - Support client for abc tool.
-    - Learn k,d,w technology for xyz.
+    - "Manage player communities across Discord, Steam, and Reddit; develop platform-specific content for X, TikTok, Instagram, and Xiaohongshu, adapting the game's immigrant-centered narrative and satire for diverse audiences."
+    - "Organize playtests and community game nights to gather player feedback; develop community-driven campaigns to increase Steam wishlists around key development and launch milestones."
+    - "Build relationships with streamers and content creators to expand organic reach; monitor community sentiment and flag emerging risks around culturally sensitive topics."
 
 - company:
-    name: PreExample Co.
-    url: "https://www.example.com"
-    location: Nowhere
-    logo: /images/sections/experiences/company2.jpg
-    # Can optionally show a different logo for dark theme
-    # darkLogo: /images/sections/experiences/company2.jpg
-    overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+    name: The Associated Press
+    location: New York, NY
   positions:
-  - designation: Software Engineer
-    start: March 2016
-    end: May 2017
+  - designation: Automated Web Scraper
+    start: Aug 2026
     responsibilities:
-    - Write lots of example codes.
-    - Read lots of examples.
-    - See lots of example videos.
+    - "Develop reusable Python scripts to extract and parse election data from HTML, PDF, and XML sources, building repeatable data-collection workflows for 2026 primary and midterm election coverage."
 
 - company:
-    name: Intern Counting Company (ICC).
-    url: "https://www.example.com"
-    location: Intern Land
-    logo: /images/sections/experiences/company3.jpg
-    # Can optionally show a different logo for dark theme
-    # darkLogo: /images/sections/experiences/company3.jpg
-    overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineers.
+    name: Spectrum Education Group
+    location: Irvine, CA
   positions:
-  - designation: Intern
-    start: Jun 2015
-    end: Jan 2016
+  - designation: Marketing Assistant
+    start: Jul 2024
+    end: Jan 2026
     responsibilities:
-    - Count lost of interns.
-    - Count more interns.
-    - Count me as an intern.
+    - "Full-lifecycle content strategy: Spearheaded Rednote and WeChat strategy; produced high-conversion video content that combined market research with cultural storytelling, on-site filming, and post-production (Adobe Premiere, CapCut), resulting in a 30% boost in engagement."
+    - "Conversion funnel optimization: Identified a 45% post-consultation drop-off through data analysis; restructured follow-up workflows, reducing response time by 30% and generating $100K+ in incremental revenue."
+    - "Social media growth: Developed cross-platform content calendars and visual assets that increased engagement by 30% and inbound inquiries by 12%."
+
+- company:
+    name: WRAL-TV Fellowship / Carolina Week
+    location: Chapel Hill, NC
+  positions:
+  - designation: Director & Producer
+    start: Aug 2022
+    end: May 2023
+    responsibilities:
+    - "Editorial direction & team leadership: Directed a 30-minute newscast for WRAL-TV, managed content blocks, editorial direction, and technical flow for live broadcasts."
+    - "Led a team of 10+ for 10 live broadcasts that won the RTDNAC Best Student Newscast 2023 and led to 15% audience growth."
+
+- company:
+    name: The Daily Tar Heel
+    location: Chapel Hill, NC
+  positions:
+  - designation: Audience Engagement Editor
+    start: Aug 2021
+    end: May 2023
+    responsibilities:
+    - "Developed off-platform audience strategies through SEO headlines and platform-specific social copy, tailoring story framing, tone, and visual presentation for Facebook, Instagram, and X."
+    - "Analyzed social media and website performance data alongside reader feedback to identify audience interests, questions, and opportunities to improve story framing and distribution."
+    - "Monitored audience response to coverage of campus issues, including UNC water quality concerns, and brought reader questions and engagement patterns to reporters to inform discussions of potential follow-up angles."
+
+- company:
+    name: Sky Link TV
+    location: Los Angeles, CA
+  positions:
+  - designation: Production Assistant
+    start: May 2022
+    end: Aug 2022
+    responsibilities:
+    - "Pitched news content and promotion campaigns for bilingual broadcasts (Mandarin and Cantonese), increasing viewer engagement by 15%."
+    - "Coordinated with the marketing department to develop promotion strategies for Sky Link Daily News and Sky Talk newscasts and long-form video series."
+
+- company:
+    name: Hangzhou Zhidi Cultural Creativity
+    location: Hangzhou, China
+  positions:
+  - designation: Marketing Intern
+    start: Jul 2020
+    end: Dec 2020
+    responsibilities:
+    - "Campaign execution: Led a 5-member team to launch WeChat + Douyin campaigns that improved campaign CTR by 18%."

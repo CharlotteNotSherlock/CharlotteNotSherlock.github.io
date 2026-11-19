@@ -1,7 +1,7 @@
 [tools]
 hugo-extended = '0.169.0'
 "github:sass/dart-sass" = { version = "1.108.2", version_prefix = "" }
-node = 'latest'
+node = "24"
 go = 'latest'
 
 [tasks.install]
@@ -126,3 +126,6 @@ run = "npm audit fix --force"
 description = "Run build, lint, URL, and SEO regression tests"
 # This gives the AI a single 'truth' command to validate its work.
 depends = ["lint", "build", "test-urls", "test-seo", "test-pagination", "test-code-blocks", "test-skill-details", "test-scroll-snap", "test-docs", "test-blog"]
+
+[env]
+NODE_ENV = "development"

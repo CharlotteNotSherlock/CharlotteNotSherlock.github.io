@@ -1,6 +1,6 @@
 # section information
 section:
-  name: Achievements
+  name: Awards and Certifications
   id: achievements
   enable: true
   weight: 10
@@ -10,15 +10,12 @@ section:
 
 # Your achievements achievements
 achievements:
-- title: Best Presenter
-  image: /images/sections/achievements/presenter.jpg
-  summary: Best presenter in the 2020 XYZ conference.
-- title: Champion
-  image: /images/sections/achievements/sport.jpg
-  summary: Champion in cycling inter-city cycling championship 2020.
-- title: Graduation
+- title: The Lede Program
   image: /images/sections/achievements/graduation-cap.jpg
-  summary: Received Bachelor of Science (B.Sc.) in Computer Science and Engineer from XYZ University.
-- title: Award Winner
+  summary: "Certification in Data Journalism, Columbia University (2026)."
+- title: RTDNAC — Best Student News Reporting
+  image: /images/sections/achievements/presenter.jpg
+  summary: "2nd Place (2023) for '1 in 6': the state of childhood food insecurity in N.C."
+- title: RTDNAC — Ken White Best Student Newscast
   image: /images/sections/achievements/woman-winner.jpg
-  summary: Wined best paper award at IEE Conference 2020.
+  summary: "1st Place (2023) for Carolina Week."

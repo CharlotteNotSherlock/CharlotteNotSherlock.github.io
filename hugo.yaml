@@ -1,3 +1,6 @@
+baseURL: "https://CharlotteNotSherlock.github.io/"
+params:
+  gitRepo: 'https://github.com/CharlotteNotSherlock/CharlotteNotSherlock.github.io'
 module:
   hugoVersion:
     min: "0.163.0"
