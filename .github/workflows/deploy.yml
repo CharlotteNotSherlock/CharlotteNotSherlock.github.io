@@ -33,6 +33,9 @@ jobs:
           hugo-version: "0.169.0"
           extended: true
 
+      - name: Install Dart Sass
+        run: npm install --global sass@1.108.2
+
       - name: Install dependencies
         working-directory: exampleSites/portfolio
         run: |
