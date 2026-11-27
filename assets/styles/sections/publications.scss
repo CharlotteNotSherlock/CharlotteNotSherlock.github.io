@@ -16,6 +16,17 @@
       display: flex;
       flex-direction: column;
 
+      .card-title a[href] {
+        color: get-light-color('heading-color');
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+          color: get-light-color('accent-color');
+          text-decoration: underline;
+        }
+      }
+
       .sub-title {
         color: get-light-color('muted-text-color');
         margin-top: 0.4rem;
@@ -135,6 +146,15 @@ html[data-theme='dark'] {
       }
 
       .card-header {
+        .card-title a[href] {
+          color: get-dark-color('heading-color');
+
+          &:hover,
+          &:focus-visible {
+            color: get-dark-color('accent-color');
+          }
+        }
+
         .sub-title {
           color: get-dark-color('muted-text-color');
         }

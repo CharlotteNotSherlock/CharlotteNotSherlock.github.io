@@ -12,80 +12,77 @@ section:
 buttons:
 - name: All
   filter: "all"
-- name: "Machine Learning"
-  filter: "machinelearning"
-- name: "Image Processing"
-  filter: "image-processing"
-- name: Security
-  filter: "security"
+- name: Audio
+  filter: "audio"
+- name: Data Journalism
+  filter: "data-journalism"
+- name: Features
+  filter: "features"
 
 # your publications
 publications:
-- title: An Example Paper on Machine Learning
+- title: "Voice and Silence: Yiru's Journey"
   publishedIn:
-    name: 2020 IEEE Region Symposium (TENSYMP)
-    date: 7 June 2020
-    # Optional first-class fields; rendered as "<name> <volume>, <articleNumber>".
-    volume: "42"
-    articleNumber: "1234"
-    url: https://example.com
+    name: Spotify
   authors:
-  - name: Dr. Madman
-    url: https://example.com
-  - name: Dr. Lessmad
-    url: https://example.com
-  - name: Dr. Moremad
-    url: https://example.com
-  - name: Dr. Goodman
-    url: https://example.com
+  - name: Charlotte Zhao
   paper:
-    summary: Voluptate in id id voluptate laboris. Minim mollit aliquip sit aliqua ut exercitation voluptate eiusmod consequat pariatur sunt enim veniam. Velit esse tempor laboris anim tempor officia. Magna non labore duis do esse sit do ipsum culpa. Officia consequat id non duis culpa dolor. Excepteur magna non nostrud cupidatat aute aliqua aliquip.
-    # First-class identifiers. `doi` -> https://doi.org/..., `arxiv` ->
-    # https://arxiv.org/abs/...; `url` remains for a preprint/PDF or any link.
-    doi: "10.1109/TENSYMP50017.2020.9230646"
-    arxiv: "2006.12345"
-    url: https://example.com
-    # Optional label for the `url` button (default "Details"), e.g. "PDF".
-    # urlText: PDF
-  categories: ["machinelearning","image-processing"]
-  tags: ["Machine Learning", "Autonomous Driving", "Computer Vision"]
+    url: https://open.spotify.com/episode/10laRFrM07G1wCQCV2bPOP?si=cVle5xUqRnKn-Xdwk5Diqg
+    urlText: Listen
+  categories: ["audio"]
+  tags: ["Audio"]
 
-- title: An Sample Paper on Image Processing
+- title: "Echoes of the Game: A Table Tennis Journey"
   publishedIn:
-    name: 2020 IEEE Region Symposium (TENSYMP)
-    date: 7 June 2020
-    url: https://example.com
+    name: Spotify
   authors:
-  - name: Dr. Madman
-    url: https://example.com
-  - name: Dr. Lessmad
-    url: https://example.com
-  - name: Dr. Moremad
-    url: https://example.com
-  - name: Dr. Goodman
-    url: https://example.com
+  - name: Charlotte Zhao
   paper:
-    summary: Ullamco magna minim cupidatat Lorem ea ex aliqua fugiat et. Dolor quis cillum ea duis irure et commodo aliquip consectetur ullamco labore ut anim nisi. Commodo reprehenderit est consectetur tempor adipisicing occaecat exercitation amet do aliquip dolor do irure. Labore officia ut magna pariatur reprehenderit et ex sit sunt. Magna proident ullamco adipisicing sit.
-    url: https://example.com
-  categories: ["image-processing"]
-  tags: ["Image Processing", "Computer Vision"]
+    url: https://open.spotify.com/episode/38fcjIKaBp56i3IS3xfdyr?si=oGarclNySFmjNhAGO-meRA
+    urlText: Listen
+  categories: ["audio"]
+  tags: ["Audio"]
 
-- title: An Example Paper on Security
+- title: "'1 in 6': the state of childhood food insecurity in North Carolina"
   publishedIn:
-    name: 2020 IEEE Region Symposium (TENSYMP)
-    date: 7 June 2020
-    url: https://example.com
+    name: UNC Media Hub
   authors:
-  - name: Dr. Madman
-    url: https://example.com
-  - name: Dr. Lessmad
-    url: https://example.com
-  - name: Dr. Moremad
-    url: https://example.com
-  - name: Dr. Goodman
-    url: https://example.com
+  - name: Charlotte Zhao
   paper:
-    summary: Dolor ad cupidatat pariatur nulla ipsum ex ullamco nisi anim ullamco. Dolore elit esse in exercitation minim aliqua. Amet velit incididunt magna laboris. Proident reprehenderit deserunt ad officia duis dolor. Tempor nostrud ullamco ullamco sint deserunt cupidatat irure minim consectetur nulla adipisicing sunt.
-    url: https://example.com
-  categories: ["security"]
-  tags: ["Machine Learning", "Autonomous Driving", "Machine Vision"]
+    url: https://mediahub.unc.edu/1-in-6-the-state-of-childhood-food-insecurity-in-north-carolina/
+    urlText: Read
+  categories: ["data-journalism"]
+  tags: ["Data Journalism", "Food Insecurity"]
+
+- title: "52 years later: the remembrance and memorialization of James Lewis Cates Jr."
+  publishedIn:
+    name: UNC Media Hub
+  authors:
+  - name: Charlotte Zhao
+  paper:
+    url: https://mediahub.unc.edu/52-years-later-the-remembrance-and-memorialization-of-james-lewis-cates-jr/
+    urlText: Read
+  categories: ["features"]
+  tags: ["Feature"]
+
+- title: "Delta-8 THC in North Carolina: the legal cannabis that has sellers, consumers on a high"
+  publishedIn:
+    name: UNC Media Hub
+  authors:
+  - name: Charlotte Zhao
+  paper:
+    url: https://mediahub.unc.edu/delta-8-thc-in-north-carolina-the-legal-cannabis-that-has-sellers-consumers-on-a-high/
+    urlText: Read
+  categories: ["features"]
+  tags: ["Feature", "Health"]
+
+- title: "“Sharing to Save Myself”: The Mountains, Valleys and Tales of an Educated Debutante"
+  publishedIn:
+    name: UNC Media Hub
+  authors:
+  - name: Charlotte Zhao
+  paper:
+    url: https://mediahub.unc.edu/sharing-to-save-myself-the-mountains-valleys-and-tales-of-an-educated-debutante/
+    urlText: Read
+  categories: ["features"]
+  tags: ["Feature"]

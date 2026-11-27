@@ -12,8 +12,6 @@ section:
 buttons:
 - name: All
   filter: "all"
-- name: Data Journalism
-  filter: "data-journalism"
 - name: Animal Welfare
   filter: "animal-welfare"
 - name: Health

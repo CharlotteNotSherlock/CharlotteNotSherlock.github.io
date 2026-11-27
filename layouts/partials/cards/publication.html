@@ -3,13 +3,24 @@
   {{ $dataCategories = $dataCategories | append (printf "pub-%s" .)}}
 {{end}}
 
+{{ $mainURL := .paper.url }}
+{{ if not $mainURL }}{{ $mainURL = .publishedIn.url }}{{ end }}
+{{ $titleURL := "" }}
+{{ with $mainURL }}{{ $titleURL = partial "helpers/get-resource-url.html" . }}{{ end }}
+
 <div
   class="col-12 p-2 pub-filtr-item"
   data-category='{{ delimit $dataCategories ","}}'
 >
   <div class="card mt-3">
     <div class="card-header">
-      <h5 class="card-title mb-0">{{ .title }}</h5>
+      <h5 class="card-title mb-0">
+        {{ if $titleURL }}
+        <a href="{{ $titleURL }}" target="_blank" rel="noopener">{{ .title }}</a>
+        {{ else }}
+        {{ .title }}
+        {{ end }}
+      </h5>
       <div class="sub-title">
         <span>
           {{/* Compose the venue label from the journal name plus optional
