@@ -1,0 +1,50 @@
+{{ define "navbar" }}
+  {{ partial "navigators/navbar.html" . }}
+{{ end }}
+
+{{ define "content" }}
+<section class="content-section work-single" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area work-read-area">
+      <div class="work-page">
+        <header class="work-header">
+          <h1>{{ .Title }}</h1>
+          {{ with .Params.summary }}
+            <p class="work-summary">{{ . | markdownify }}</p>
+          {{ end }}
+          {{ if or .Params.role .Params.client .Params.timeline }}
+          <dl class="work-meta">
+            {{ with .Params.role }}
+            <div>
+              <dt>{{ i18n "work_role" }}</dt>
+              <dd>{{ . }}</dd>
+            </div>
+            {{ end }}
+            {{ with .Params.client }}
+            <div>
+              <dt>{{ i18n "work_client" }}</dt>
+              <dd>{{ . }}</dd>
+            </div>
+            {{ end }}
+            {{ with .Params.timeline }}
+            <div>
+              <dt>{{ i18n "work_timeline" }}</dt>
+              <dd>{{ . }}</dd>
+            </div>
+            {{ end }}
+          </dl>
+          {{ end }}
+        </header>
+
+        {{ with .Content }}
+        <div class="post-content work-content" id="work-content">
+          {{ . }}
+        </div>
+        {{ end }}
+
+        {{ partial "work/gallery.html" . }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

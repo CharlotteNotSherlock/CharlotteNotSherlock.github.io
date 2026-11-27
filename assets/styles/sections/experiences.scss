@@ -15,6 +15,18 @@
     font-weight: 600;
   }
 
+  .position-duties {
+    color: get-light-color('text-color');
+
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   .circle {
     padding: 13px 20px;
     border-radius: 50%;
@@ -103,6 +115,238 @@
     }
   }
 
+  .selected-work {
+    margin-top: 1rem;
+    border: 1px solid get-light-color('bg-secondary');
+    border-radius: 0.5rem;
+    background-color: get-light-color('bg-card');
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      color: get-light-color('heading-color');
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &:focus-visible {
+        outline: 2px solid get-light-color('accent-color');
+        outline-offset: 2px;
+      }
+    }
+
+    &[open] summary {
+      border-bottom: 1px solid get-light-color('bg-secondary');
+    }
+
+    .selected-work-heading {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .selected-work-count {
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      background-color: get-light-color('bg-secondary');
+      color: get-light-color('muted-text-color');
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .selected-work-chevron {
+      transition: transform $transition-duration $transition-type;
+    }
+
+    &[open] .selected-work-chevron {
+      transform: rotate(180deg);
+    }
+
+    .selected-work-gallery {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem;
+    }
+
+    .selected-work-track {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 0.25rem;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-color: get-light-color('muted-text-color') transparent;
+      scrollbar-width: thin;
+      cursor: grab;
+      user-select: none;
+
+      &.is-dragging {
+        cursor: grabbing;
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+      }
+
+      &:focus-visible {
+        outline: 2px solid get-light-color('accent-color');
+        outline-offset: 2px;
+      }
+    }
+
+    .selected-work-slide {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      width: clamp(170px, 68vw, 280px);
+      margin: 0;
+      background-color: get-light-color('bg-secondary');
+      scroll-snap-align: start;
+    }
+
+    .selected-work-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .selected-work-nav {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem;
+      height: 2.25rem;
+      padding: 0;
+      border: 1px solid get-light-color('bg-secondary');
+      border-radius: 50%;
+      background-color: get-light-color('bg-card');
+      color: get-light-color('text-color');
+      transition: border-color $transition-duration $transition-type,
+        color $transition-duration $transition-type,
+        opacity $transition-duration $transition-type;
+
+      &:hover,
+      &:focus-visible {
+        border-color: get-light-color('accent-color');
+        color: get-light-color('accent-color');
+      }
+
+      &:focus-visible {
+        outline: 2px solid get-light-color('accent-color');
+        outline-offset: 2px;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.35;
+      }
+    }
+
+    @include media('<=small') {
+      .selected-work-gallery {
+        padding: 0.75rem;
+      }
+
+      .selected-work-nav {
+        display: none;
+      }
+    }
+
+    .selected-work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .selected-work-item {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid get-light-color('bg-secondary');
+      border-radius: 0.5rem;
+      background-color: get-light-color('bg-card');
+      color: get-light-color('text-color');
+      text-decoration: none;
+      transition: transform $transition-duration $transition-type,
+        box-shadow $transition-duration $transition-type,
+        border-color $transition-duration $transition-type;
+
+      &:hover,
+      &:focus-visible {
+        border-color: get-light-color('accent-color');
+        box-shadow: $box-shadow;
+        color: get-light-color('text-color');
+        text-decoration: none;
+        transform: translateY(-2px);
+      }
+
+      &:focus-visible {
+        outline: 2px solid get-light-color('accent-color');
+        outline-offset: 2px;
+      }
+    }
+
+    .selected-work-thumb {
+      display: block;
+      width: 100%;
+      height: auto;
+      background-color: get-light-color('bg-secondary');
+    }
+
+    .selected-work-thumb-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 4 / 3;
+      background-color: get-light-color('bg-secondary');
+      color: get-light-color('muted-text-color');
+      font-size: 1.5rem;
+    }
+
+    .selected-work-caption {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.75rem;
+    }
+
+    .selected-work-item-title {
+      color: get-light-color('heading-color');
+      font-weight: 600;
+    }
+
+    .selected-work-item-summary {
+      color: get-light-color('muted-text-color');
+      font-size: 0.875rem;
+    }
+
+    @include media('<=medium') {
+      .selected-work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @include media('<=small') {
+      .selected-work-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  }
+
   @include media('<=medium') {
     .container {
       max-width: 100%;
@@ -137,6 +381,10 @@ html[data-theme='dark'] {
       color: get-dark-color('text-over-accent-color');
     }
 
+    .position-duties {
+      color: get-dark-color('text-color');
+    }
+
     .timeline {
       .vertical-line {
         &::after {
@@ -150,6 +398,89 @@ html[data-theme='dark'] {
         .corner {
           border: 3px solid get-dark-color('accent-color');
         }
+      }
+    }
+
+    .selected-work {
+      border-color: get-dark-color('bg-secondary');
+      background-color: get-dark-color('bg-card');
+
+      summary {
+        color: get-dark-color('heading-color');
+
+        &:focus-visible {
+          outline-color: get-dark-color('accent-color');
+        }
+      }
+
+      &[open] summary {
+        border-bottom-color: get-dark-color('bg-secondary');
+      }
+
+      .selected-work-count {
+        background-color: get-dark-color('bg-secondary');
+        color: get-dark-color('muted-text-color');
+      }
+
+      .selected-work-track {
+        scrollbar-color: get-dark-color('muted-text-color') transparent;
+
+        &:focus-visible {
+          outline-color: get-dark-color('accent-color');
+        }
+      }
+
+      .selected-work-slide {
+        background-color: get-dark-color('bg-secondary');
+      }
+
+      .selected-work-nav {
+        border-color: get-dark-color('bg-secondary');
+        background-color: get-dark-color('bg-card');
+        color: get-dark-color('text-color');
+
+        &:hover,
+        &:focus-visible {
+          border-color: get-dark-color('accent-color');
+          color: get-dark-color('accent-color');
+        }
+
+        &:focus-visible {
+          outline-color: get-dark-color('accent-color');
+        }
+      }
+
+      .selected-work-item {
+        border-color: get-dark-color('bg-secondary');
+        background-color: get-dark-color('bg-card');
+        color: get-dark-color('text-color');
+
+        &:hover,
+        &:focus-visible {
+          border-color: get-dark-color('accent-color');
+          color: get-dark-color('text-color');
+        }
+
+        &:focus-visible {
+          outline-color: get-dark-color('accent-color');
+        }
+      }
+
+      .selected-work-thumb {
+        background-color: get-dark-color('bg-secondary');
+      }
+
+      .selected-work-thumb-placeholder {
+        background-color: get-dark-color('bg-secondary');
+        color: get-dark-color('muted-text-color');
+      }
+
+      .selected-work-item-title {
+        color: get-dark-color('heading-color');
+      }
+
+      .selected-work-item-summary {
+        color: get-dark-color('muted-text-color');
       }
     }
   }

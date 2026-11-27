@@ -1,0 +1,241 @@
+body.type-work {
+  .wrapper {
+    .content-section {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.work-read-area {
+  background-color: get-light-color('bg-primary');
+  padding: 1.5rem;
+
+  @include media('<=small') {
+    padding: 1rem;
+  }
+}
+
+.work-page {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.work-header {
+  h1 {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.work-summary {
+  max-width: 70ch;
+  color: get-light-color('muted-text-color');
+}
+
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  margin-top: 1.25rem;
+
+  div {
+    margin: 0;
+  }
+
+  dt {
+    margin: 0;
+    color: get-light-color('muted-text-color');
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: get-light-color('heading-color');
+    font-weight: 600;
+  }
+}
+
+.work-content {
+  margin-top: 1.5rem;
+}
+
+.work-gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.work-gallery-caption {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.work-gallery-description {
+  max-width: 70ch;
+  margin-bottom: 0.75rem;
+  color: get-light-color('muted-text-color');
+}
+
+.work-gallery-track {
+  display: flex;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background-color: get-light-color('bg-secondary');
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid get-light-color('accent-color');
+    outline-offset: 2px;
+  }
+}
+
+.work-gallery-slide {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  min-width: 100%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.work-gallery-media {
+  display: block;
+  background-color: get-light-color('bg-secondary');
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.work-gallery-slide-caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: get-light-color('muted-text-color');
+  font-size: 0.875rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.work-gallery-external {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.work-gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.work-gallery-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid get-light-color('bg-secondary');
+  border-radius: 50%;
+  background-color: get-light-color('bg-card');
+  color: get-light-color('text-color');
+  transition: border-color $transition-duration $transition-type,
+    color $transition-duration $transition-type,
+    opacity $transition-duration $transition-type;
+
+  &:hover,
+  &:focus-visible {
+    border-color: get-light-color('accent-color');
+    color: get-light-color('accent-color');
+  }
+
+  &:focus-visible {
+    outline: 2px solid get-light-color('accent-color');
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.work-gallery-counter {
+  min-width: 3.5rem;
+  color: get-light-color('muted-text-color');
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+html[data-theme='dark'] {
+  .work-read-area {
+    background-color: get-dark-color('bg-card');
+  }
+
+  .work-summary,
+  .work-gallery-description,
+  .work-gallery-slide-caption,
+  .work-gallery-counter {
+    color: get-dark-color('muted-text-color');
+  }
+
+  .work-meta {
+    dt {
+      color: get-dark-color('muted-text-color');
+    }
+
+    dd {
+      color: get-dark-color('heading-color');
+    }
+  }
+
+  .work-gallery-track {
+    background-color: get-dark-color('bg-secondary');
+
+    &:focus-visible {
+      outline-color: get-dark-color('accent-color');
+    }
+  }
+
+  .work-gallery-media {
+    background-color: get-dark-color('bg-secondary');
+  }
+
+  .work-gallery-button {
+    border-color: get-dark-color('bg-secondary');
+    background-color: get-dark-color('bg-card');
+    color: get-dark-color('text-color');
+
+    &:hover,
+    &:focus-visible {
+      border-color: get-dark-color('accent-color');
+      color: get-dark-color('accent-color');
+    }
+
+    &:focus-visible {
+      outline-color: get-dark-color('accent-color');
+    }
+  }
+}

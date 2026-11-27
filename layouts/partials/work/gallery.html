@@ -1,0 +1,81 @@
+{{ $page := . }}
+{{ with .Params.gallery }}
+<div class="work-gallery-list">
+  {{ range $postIndex, $post := . }}
+    {{ $postURL := $post.url }}
+    {{ with $post.images }}
+    <section class="work-gallery" data-work-gallery>
+      {{ with $post.caption }}
+        <h2 class="work-gallery-caption">{{ . }}</h2>
+      {{ end }}
+      {{ with $post.description }}
+        <p class="work-gallery-description">{{ . | markdownify }}</p>
+      {{ end }}
+      <div class="work-gallery-track" data-work-gallery-track
+        role="group"
+        aria-label="{{ $post.caption | default (i18n "work_gallery_label") }}"
+        tabindex="0">
+        {{ range $imageIndex, $image := . }}
+          {{ $src := $image.src | default $image.image }}
+          {{ $imageURL := $image.url | default $postURL }}
+          {{ $alt := $image.alt | default $image.caption | default (printf "%s %d" ($post.caption | default (i18n "work_gallery_label")) (add $imageIndex 1)) }}
+          {{ $resource := partial "work/image.html" (dict "page" $page "src" $src) }}
+          <figure class="work-gallery-slide">
+            {{ if $imageURL }}
+              <a class="work-gallery-media" href="{{ $imageURL }}" target="_blank" rel="noopener">
+            {{ else }}
+              <div class="work-gallery-media">
+            {{ end }}
+              {{ with $resource }}
+                {{ $display := . }}
+                {{ if and (gt .Width 1400) (not (in (slice "svg" "gif") .MediaType.SubType)) }}
+                  {{ $display = .Resize "1400x" }}
+                {{ end }}
+                <img src="{{ $display.RelPermalink }}" alt="{{ $alt }}"{{ if and (gt $display.Width 0) (gt $display.Height 0) }} width="{{ $display.Width }}" height="{{ $display.Height }}"{{ end }} loading="{{ if eq $imageIndex 0 }}eager{{ else }}lazy{{ end }}" decoding="async" />
+              {{ else }}
+                {{ with $src }}
+                  <img src="{{ partial "helpers/get-image-url.html" (dict "context" $page "path" .) }}" alt="{{ $alt }}" loading="{{ if eq $imageIndex 0 }}eager{{ else }}lazy{{ end }}" decoding="async" />
+                {{ end }}
+              {{ end }}
+            {{ if $imageURL }}</a>{{ else }}</div>{{ end }}
+            <figcaption class="work-gallery-slide-caption">
+              {{ with $image.caption }}
+                <p class="work-gallery-slide-text">{{ . | markdownify }}</p>
+              {{ end }}
+              {{ with $imageURL }}
+                {{ $label := $image.linkLabel | default $post.linkLabel }}
+                {{ if not $label }}
+                  {{ $lowerURL := lower . }}
+                  {{ if strings.Contains $lowerURL "instagram" }}
+                    {{ $label = i18n "work_view_on_instagram" }}
+                  {{ else if or (strings.Contains $lowerURL "xiaohongshu") (strings.Contains $lowerURL "xhslink") }}
+                    {{ $label = i18n "work_view_on_xiaohongshu" }}
+                  {{ else }}
+                    {{ $label = i18n "work_view_original" }}
+                  {{ end }}
+                {{ end }}
+                <a class="work-gallery-external" href="{{ . }}" target="_blank" rel="noopener">
+                  {{ $label }}
+                  <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              {{ end }}
+            </figcaption>
+          </figure>
+        {{ end }}
+      </div>
+      {{ if gt (len .) 1 }}
+      <div class="work-gallery-controls">
+        <button type="button" class="work-gallery-button" data-work-gallery-prev aria-label="{{ i18n "work_gallery_previous" }}">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <span class="work-gallery-counter" data-work-gallery-counter aria-live="polite">1 / {{ len . }}</span>
+        <button type="button" class="work-gallery-button" data-work-gallery-next aria-label="{{ i18n "work_gallery_next" }}">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}

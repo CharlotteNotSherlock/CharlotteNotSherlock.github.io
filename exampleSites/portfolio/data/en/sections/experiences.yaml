@@ -11,24 +11,51 @@ section:
 # Your experiences
 experiences:
 - company:
-    name: Reality Reload
-    location: New York, NY
-  positions:
-  - designation: Community & Social Media Coordinator
-    start: Oct 2026
-    responsibilities:
-    - "Manage player communities across Discord, Steam, and Reddit; develop platform-specific content for X, TikTok, Instagram, and Xiaohongshu, adapting the game's immigrant-centered narrative and satire for diverse audiences."
-    - "Organize playtests and community game nights to gather player feedback; develop community-driven campaigns to increase Steam wishlists around key development and launch milestones."
-    - "Build relationships with streamers and content creators to expand organic reach; monitor community sentiment and flag emerging risks around culturally sensitive topics."
-
-- company:
     name: The Associated Press
     location: New York, NY
   positions:
   - designation: Automated Web Scraper
     start: Aug 2026
-    responsibilities:
-    - "Develop reusable Python scripts to extract and parse election data from HTML, PDF, and XML sources, building repeatable data-collection workflows for 2026 primary and midterm election coverage."
+    what I do:
+    - I build tools that help the Associated Press collect election results from a wide range of sources. Using Python, I write reusable scripts to scrape and parse data from HTML pages, PDFs, and XML files, and turn it into structured data that can be used across election coverage.
+    - Much of my work focuses on making these workflows repeatable, so we can collect and process results more efficiently as election night unfolds. In 2026, I worked for the 2026 primary and midterm elections.
+
+
+- company:
+    name: Reality Reload
+    location: New York, NY
+  positions:
+  - designation: Community & Social Media Coordinator
+    start: Oct 2026
+    end: Dec 2026
+    what I do:
+    - I work on community and audience growth for Reality Reload, an indie narrative-driven game collection exploring the immigrant experience in America through satire and humor.
+    - I curated a social media calendar to make sure social media content can be in sync with the gaming production phase. I developed social content for Instagram, X, and Xiaohongshu (RedNote) while managing player communities across Discord. A big part of my work is figuring out how to translate the game's themes and sense of humor for different audiences, especially across English- and Chinese-speaking communities.
+    - I also organize playtests and community game nights to bring players into the development process, gather feedback, and build interest around key milestones. Alongside this, I work with streamers and content creators to introduce the game to new audiences and turn community interest into Steam wishlists.
+
+    # Selected Work supports either an `images` strip (images only, one path per
+    # line) or `items` cards (image + title + link, as documented below).
+    # Images live under assets/images/ and are referenced from the assets root.
+    selectedWork:
+      title: "Show more"
+      images:
+      - images/work/reality-reload/playtest-1.jpg
+      - images/work/reality-reload/playtest-2.jpg
+      - images/work/reality-reload/steam-1.jpg
+      - images/work/reality-reload/steam-2.jpg
+      - images/work/reality-reload/election-en-1.png
+      - images/work/reality-reload/election-en-2.png
+      - images/work/reality-reload/election-zh-1.png
+      - images/work/reality-reload/election-zh-2.png
+    # Card mode example:
+    # selectedWork:
+    #   title: Selected Work
+    #   items:
+    #   - title: "Campaign name"
+    #     image: images/sections/experiences/reality-reload/campaign.jpg
+    #     url: /work/campaign-name/
+    #     alt: "Campaign key art"
+    #     summary: "One-line description."
 
 - company:
     name: Spectrum Education Group
@@ -37,10 +64,11 @@ experiences:
   - designation: Marketing Assistant
     start: Jul 2024
     end: Jan 2026
-    responsibilities:
-    - "Full-lifecycle content strategy: Spearheaded Rednote and WeChat strategy; produced high-conversion video content that combined market research with cultural storytelling, on-site filming, and post-production (Adobe Premiere, CapCut), resulting in a 30% boost in engagement."
-    - "Conversion funnel optimization: Identified a 45% post-consultation drop-off through data analysis; restructured follow-up workflows, reducing response time by 30% and generating $100K+ in incremental revenue."
-    - "Social media growth: Developed cross-platform content calendars and visual assets that increased engagement by 30% and inbound inquiries by 12%."
+    what I do:
+    - I worked as a Marketing Assistant at Spectrum Education Group, a female-owned education startup in Southern California. It was a small team, so I got to work across different parts of the business, from social media and content production to marketing strategy and customer engagement.
+    - I led the company's content strategy on Xiaohongshu (Rednote) and WeChat, creating videos and social content that combined market research with cultural storytelling. I also handled on-site filming and post-production, producing content that helped increase social media engagement by 30% and inbound inquiries by 12%.
+    - Beyond content, I used customer data to look at where prospective families were dropping off in the consultation process. After identifying a 45% drop-off following consultations, I helped restructure the follow-up process, reducing response times by 30% and contributing to over $100K in incremental revenue.
+    - I was also invited to host and speak at several annual events celebrating the Chinese community in Southern California.
 
 - company:
     name: WRAL-TV Fellowship / Carolina Week
@@ -49,7 +77,7 @@ experiences:
   - designation: Director & Producer
     start: Aug 2022
     end: May 2023
-    responsibilities:
+    what I do:
     - "Editorial direction & team leadership: Directed a 30-minute newscast for WRAL-TV, managed content blocks, editorial direction, and technical flow for live broadcasts."
     - "Led a team of 10+ for 10 live broadcasts that won the RTDNAC Best Student Newscast 2023 and led to 15% audience growth."
 
@@ -60,7 +88,7 @@ experiences:
   - designation: Audience Engagement Editor
     start: Aug 2021
     end: May 2023
-    responsibilities:
+    what I do:
     - "Developed off-platform audience strategies through SEO headlines and platform-specific social copy, tailoring story framing, tone, and visual presentation for Facebook, Instagram, and X."
     - "Analyzed social media and website performance data alongside reader feedback to identify audience interests, questions, and opportunities to improve story framing and distribution."
     - "Monitored audience response to coverage of campus issues, including UNC water quality concerns, and brought reader questions and engagement patterns to reporters to inform discussions of potential follow-up angles."
@@ -72,16 +100,6 @@ experiences:
   - designation: Production Assistant
     start: May 2022
     end: Aug 2022
-    responsibilities:
+    what I do:
     - "Pitched news content and promotion campaigns for bilingual broadcasts (Mandarin and Cantonese), increasing viewer engagement by 15%."
     - "Coordinated with the marketing department to develop promotion strategies for Sky Link Daily News and Sky Talk newscasts and long-form video series."
-
-- company:
-    name: Hangzhou Zhidi Cultural Creativity
-    location: Hangzhou, China
-  positions:
-  - designation: Marketing Intern
-    start: Jul 2020
-    end: Dec 2020
-    responsibilities:
-    - "Campaign execution: Led a 5-member team to launch WeChat + Douyin campaigns that improved campaign CTR by 18%."

@@ -1,0 +1,16 @@
+{{- $image := "" -}}
+{{- with .Params.gallery -}}
+  {{- range . -}}
+    {{- range .images -}}
+      {{- if not $image -}}
+        {{- $image = .src | default .image -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $image -}}
+  {{- with .Params.images -}}
+    {{- $image = index . 0 -}}
+  {{- end -}}
+{{- end -}}
+{{- return $image -}}

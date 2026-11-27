@@ -36,14 +36,28 @@
             <h5 class="designation">{{ $position.designation }}</h5>
             <p class="text-muted">{{ $position.start }} - {{if $position.end }} {{ $position.end }} {{else}} {{ i18n "present" }} {{end}}</p>
         </div>
-        <!-- Add the responsibilities handled at this position -->
-        {{ if $position.responsibilities }}
+        <!-- Add the responsibilities handled at this position. Also accept
+             alternate data keys such as "what I do" and `whatIDo`. -->
+        {{ $duties := $position.responsibilities }}
+        {{ if not $duties }}{{ $duties = index $position "what I do" }}{{ end }}
+        {{ if not $duties }}{{ $duties = index $position "what i do" }}{{ end }}
+        {{ if not $duties }}{{ $duties = $position.what_i_do }}{{ end }}
+        {{ if not $duties }}{{ $duties = $position.whatIDo }}{{ end }}
+        {{ if not $duties }}{{ $duties = $position.responsibility }}{{ end }}
+        {{ if $duties }}
             <h6 class="text-heading">{{ i18n "responsibilities" }}</h6>
-            <ul class="justify-content-around">
-                {{ range $position.responsibilities }}
-                    <li>{{ . | markdownify }}</li>
+            <div class="position-duties">
+                {{ if reflect.IsSlice $duties }}
+                    {{ range $duties }}
+                        <p>{{ . | markdownify }}</p>
+                    {{ end }}
+                {{ else }}
+                    {{ $duties | markdownify }}
                 {{ end }}
-            </ul>
+            </div>
+        {{ end }}
+        {{ with $position.selectedWork }}
+            {{ partial "sections/experiences/selected-work.html" . }}
         {{ end }}
     {{ end }}
     </div>

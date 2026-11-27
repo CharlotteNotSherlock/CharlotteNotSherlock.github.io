@@ -1,0 +1,14 @@
+{{- $page := .page -}}
+{{- $src := .src -}}
+{{- $resource := "" -}}
+{{- with $page -}}
+  {{- with .Resources.Get $src -}}
+    {{- $resource = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $resource -}}
+  {{- with resources.Get $src -}}
+    {{- $resource = . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $resource -}}

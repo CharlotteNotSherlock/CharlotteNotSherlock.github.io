@@ -1,0 +1,98 @@
+{{ $work := . }}
+{{ $images := $work.images }}
+{{ $items := $work.items }}
+{{ if or $images $items }}
+  {{ $title := $work.title | default (i18n "selected_work") }}
+  {{ $count := 0 }}
+  {{ with $items }}{{ $count = len . }}{{ end }}
+  {{ with $images }}{{ $count = len . }}{{ end }}
+  <details class="selected-work" name="selected-work">
+    <summary class="selected-work-toggle">
+      <span class="selected-work-heading">
+        <span class="selected-work-title">{{ $title }}</span>
+        <span class="selected-work-count">{{ i18n "selected_work_count" (dict "Count" $count) }}</span>
+      </span>
+      <i class="fas fa-chevron-down selected-work-chevron" aria-hidden="true"></i>
+    </summary>
+    {{ if $images }}
+      <div class="selected-work-gallery" data-selected-work-gallery>
+        <button type="button" class="selected-work-nav selected-work-nav-prev" data-selected-work-prev aria-label="{{ i18n "work_gallery_previous" }}">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <div class="selected-work-track" data-selected-work-track tabindex="0">
+          {{ range $images }}
+            {{ $src := . }}
+            {{ if reflect.IsMap . }}
+              {{ $src = .src | default .image }}
+            {{ end }}
+            {{ with resources.Get $src }}
+              <figure class="selected-work-slide">
+                <img class="selected-work-image" src="{{ .RelPermalink }}" alt=""{{ if and (gt .Width 0) (gt .Height 0) }} width="{{ .Width }}" height="{{ .Height }}"{{ end }} loading="lazy" decoding="async" draggable="false" />
+              </figure>
+            {{ end }}
+          {{ end }}
+        </div>
+        <button type="button" class="selected-work-nav selected-work-nav-next" data-selected-work-next aria-label="{{ i18n "work_gallery_next" }}">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    {{ else }}
+      <div class="selected-work-grid">
+        {{ range $items }}
+          {{ $item := . }}
+          {{ $href := $item.url | default "#" }}
+          {{ $external := or (hasPrefix $href "http://") (hasPrefix $href "https://") (hasPrefix $href "//") }}
+          {{ if not $external }}
+            {{ $href = partial "helpers/get-page-url.html" $href }}
+          {{ end }}
+          {{/* Fall back to the first gallery image when the item links to an internal work page. */}}
+          {{ $thumbSrc := $item.image }}
+          {{ $thumbPage := false }}
+          {{ if and (not $thumbSrc) (not $external) }}
+            {{ $path := replaceRE "[?#].*$" "" ($item.url | default "") }}
+            {{ $path = strings.TrimPrefix "/" (strings.TrimSuffix "/" $path) }}
+            {{ if $path }}
+              {{ with site.GetPage $path }}
+                {{ $thumbPage = . }}
+                {{ with partial "work/first-image.html" . }}
+                  {{ $thumbSrc = . }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+          <a class="selected-work-item" href="{{ $href }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
+            {{ if $thumbSrc }}
+              {{ $thumb := resources.Get $thumbSrc }}
+              {{ if $thumb }}
+                {{ if and (gt $thumb.Width 800) (not (in (slice "svg" "gif") $thumb.MediaType.SubType)) }}
+                  {{ $thumb = $thumb.Resize "800x" }}
+                {{ end }}
+                <img class="selected-work-thumb" src="{{ $thumb.RelPermalink }}" alt="{{ $item.alt | default $item.title }}"{{ if and (gt $thumb.Width 0) (gt $thumb.Height 0) }} width="{{ $thumb.Width }}" height="{{ $thumb.Height }}"{{ end }} loading="lazy" decoding="async" />
+              {{ else }}
+                {{ $thumbURL := "" }}
+                {{ with $thumbPage }}
+                  {{ $thumbURL = partial "helpers/get-image-url.html" (dict "context" . "path" $thumbSrc) }}
+                {{ else }}
+                  {{ $thumbURL = partial "helpers/get-resource-url.html" $thumbSrc }}
+                {{ end }}
+                {{ with $thumbURL }}
+                  <img class="selected-work-thumb" src="{{ . }}" alt="{{ $item.alt | default $item.title }}" loading="lazy" decoding="async" />
+                {{ end }}
+              {{ end }}
+            {{ else }}
+              <span class="selected-work-thumb-placeholder" aria-hidden="true">
+                <i class="fas fa-folder-open"></i>
+              </span>
+            {{ end }}
+            <span class="selected-work-caption">
+              <span class="selected-work-item-title">{{ $item.title }}</span>
+              {{ with $item.summary }}
+                <span class="selected-work-item-summary">{{ . }}</span>
+              {{ end }}
+            </span>
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  </details>
+{{ end }}

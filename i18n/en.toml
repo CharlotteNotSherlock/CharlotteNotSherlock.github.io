@@ -90,7 +90,41 @@ other = "Show More"
 other = "Show Less"
 
 [responsibilities]
-other = "Responsibilities:"
+other = "What I do"
+
+[selected_work]
+other = "Selected Work"
+
+[selected_work_count]
+one = "{{ .Count }} item"
+other = "{{ .Count }} items"
+
+[work_gallery_label]
+other = "Image gallery"
+
+[work_gallery_previous]
+other = "Previous image"
+
+[work_gallery_next]
+other = "Next image"
+
+[work_view_on_instagram]
+other = "View on Instagram"
+
+[work_view_on_xiaohongshu]
+other = "View on Xiaohongshu"
+
+[work_view_original]
+other = "View original"
+
+[work_role]
+other = "Role"
+
+[work_client]
+other = "Client"
+
+[work_timeline]
+other = "Timeline"
 
 [present]
 other = "Present"
